@@ -118,6 +118,21 @@ export default function Home() {
           </div>
         </div>
       </div>
+      {selectedGif && (
+        <Modal isOpen={true} onClose={handleCloseModal}>
+          <div className="text-center">
+            <Image
+              src={selectedGif.images.original.url}
+              alt={selectedGif.title}
+              width={500}
+              height={500}
+            />
+            <h2 className="text-lg font-medium text-gray-900">
+              {selectedGif.title}
+            </h2>
+          </div>
+        </Modal>
+      )}
     </div>
   );
 }
